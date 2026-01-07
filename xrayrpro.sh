@@ -103,7 +103,7 @@ init_config() {
   backup_config
   cat >"$CONFIG_FILE" <<'YAML'
 Log:
-  Level: warning
+  Level: none
 Nodes:
 YAML
   ok "Đã khởi tạo file config rỗng."
