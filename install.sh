@@ -110,7 +110,7 @@ install_XrayR() {
 
     if  [ $# == 0 ] ;then
         # Lấy phiên bản từ repository AZZ-vopp/XrayR
-        last_version=$(curl -Ls "https://api.github.com/repos/leaderen/wyx2685-XrayR/releases" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | head -1)
+        last_version=$(curl -Ls "https://api.github.com/repos/AZZ-vopp/XrayR/releases" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | head -1)
         if [[ ! -n "$last_version" ]]; then
             echo -e "${yellow}Cảnh báo: Repository AZZ-vopp/XrayR chưa có release，sử dụng phiên bản cố định v0.9.4-20250101${plain}"
             last_version="v0.9.4-20250101"
@@ -121,13 +121,13 @@ install_XrayR() {
         download_success=false
         
         # Thử tên file chuẩn
-        wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/leaderen/wyx2685-XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip
+        wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/AZZ-vopp/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip
         if [[ $? -eq 0 ]]; then
             download_success=true
         else
             # Thử tên file khác cho ARM64
             if [[ "$arch" == "arm64-v8a" ]]; then
-                wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/leaderen/wyx2685-XrayR/releases/download/${last_version}/XrayR-linux-arm64-v8a.zip
+                wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/AZZ-vopp/XrayR/releases/download/${last_version}/XrayR-linux-arm64-v8a.zip
                 if [[ $? -eq 0 ]]; then
                     download_success=true
                 fi
@@ -152,13 +152,13 @@ install_XrayR() {
         download_success=false
         
         # Thử tên file chuẩn
-        wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/leaderen/wyx2685-XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip
+        wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/AZZ-vopp/XrayR/releases/download/${last_version}/XrayR-linux-${arch}.zip
         if [[ $? -eq 0 ]]; then
             download_success=true
         else
             # Thử tên file khác cho ARM64
             if [[ "$arch" == "arm64-v8a" ]]; then
-                wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/leaderen/wyx2685-XrayR/releases/download/${last_version}/XrayR-linux-arm64-v8a.zip
+                wget -q -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux.zip https://github.com/AZZ-vopp/XrayR/releases/download/${last_version}/XrayR-linux-arm64-v8a.zip
                 if [[ $? -eq 0 ]]; then
                     download_success=true
                 fi
