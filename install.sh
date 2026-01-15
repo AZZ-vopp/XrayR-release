@@ -110,7 +110,7 @@ install_XrayR() {
 
     if  [ $# == 0 ] ;then
         # Lấy phiên bản từ repository AZZ-vopp/XrayR
-        last_version=$(curl -Ls "https://api.github.com/repos/AZZ-vopp/XrayR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | head -1)
+        last_version=$(curl -Ls "https://api.github.com/repos/leaderen/wyx2685-XrayR/releases" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | head -1)
         if [[ ! -n "$last_version" ]]; then
             echo -e "${yellow}Cảnh báo: Repository AZZ-vopp/XrayR chưa có release，sử dụng phiên bản cố định v0.9.4-20250101${plain}"
             last_version="v0.9.4-20250101"
